@@ -1,3 +1,3 @@
 # Alta
-A discord bot that was going to be in .NET but swing needs a bot so he's making another fucking bot for that
+<img src="https://github.com/Atlacomm/Alta/blob/master/Media/AltaConcept.png?raw=true">
 
