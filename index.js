@@ -4,6 +4,7 @@ const fs = require('fs');
 const col = require('colors');
 let configFile;
 
+
 function FileCheck(){
     let blank = { };
     let blankJson = JSON.stringify(blank);
