@@ -30,7 +30,7 @@ function FileCheck(){
                     console.log('settings file found')
                 } else if (err.code === 'ENOENT') {
                     console.log('settings file not found, creating new file \"settings\"');
-                    fs.writeFile('./database/settings.json', settingsJson, function(err, result) {
+                    fs.writeFile('./database/settings.json', settingsJson, function(err) {
                         if(err) console.log('there was an error creating a file', err)
                     });
                 }
@@ -41,7 +41,7 @@ function FileCheck(){
                     console.log('prefixes file found')
                 } else if (err.code === 'ENOENT') {
                     console.log('prefixes file not found, creating new file \"prefixes\"');
-                    fs.writeFile('./database/prefixes.json', blankJson, function(err, result) {
+                    fs.writeFile('./database/prefixes.json', blankJson, function(err) {
                         if(err) console.log('there was an error creating a file', err)
                     });
                 }
@@ -52,7 +52,7 @@ function FileCheck(){
                     console.log('colors file found')
                 } else if (err.code === 'ENOENT') {
                     console.log('colors file not found, creating new file \"colors\"');
-                    fs.writeFile('./database/colors.json', blankJson, function(err, result) {
+                    fs.writeFile('./database/colors.json', blankJson, function(err) {
                         if(err) console.log('there was an error creating a file', err)
                     });
                 }
@@ -60,11 +60,11 @@ function FileCheck(){
 
             fs.stat('./database/token.json', function(err) {
                 if(!err) {
-                    console.log('token file found')
+                    console.log('token file found');
                     configFile = JSON.parse(fs.readFileSync('./database/token.json', 'utf8'));
                 } else if (err.code === 'ENOENT') {
                     console.log('token file not found, creating new file \"token\"');
-                    fs.writeFile('./database/token.json', tokenJson, function(err, result) {
+                    fs.writeFile('./database/token.json', tokenJson, function(err) {
                         if(err) console.log('there was an error creating a file', err)
                     });
                     console.log('please open the token.json file in the database folder and paste in your bot token. the bot will now exit.'.red);
@@ -79,16 +79,16 @@ function FileCheck(){
                     console.log('an error occurred while making the database directory.')
                 } else {
                     console.log('creating database files...');
-                    fs.writeFile('./database/settings.json', settingsJson, function(err, result) {
+                    fs.writeFile('./database/settings.json', settingsJson, function(err) {
                         if(err) console.log('there was an error creating a file', err)
                     });
-                    fs.writeFile('./database/prefixes.json', blankJson, function(err, result) {
+                    fs.writeFile('./database/prefixes.json', blankJson, function(err) {
                         if(err) console.log('there was an error creating a file', err)
                     });
-                    fs.writeFile('./database/colors.json', blankJson, function(err, result) {
+                    fs.writeFile('./database/colors.json', blankJson, function(err) {
                         if(err) console.log('there was an error creating a file', err)
                     });
-                    fs.writeFile('./database/token.json', tokenJson, function(err, result) {
+                    fs.writeFile('./database/token.json', tokenJson, function(err) {
                         if(err) console.log('there was an error creating a file', err)
                     });
                     console.log('please open the token.json file in the database folder and paste in your bot token. the bot will now exit.'.red);
